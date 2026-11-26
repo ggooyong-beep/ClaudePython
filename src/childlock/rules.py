@@ -97,7 +97,7 @@ def rule_crash_pending(snap: VehicleSnapshot, mem: Memory) -> Verdict | None:
     return None
 
 
-def _approach_risk(snap: VehicleSnapshot, side: Side) -> bool:
+def approach_risk(snap: VehicleSnapshot, side: Side) -> bool:
     """해당 측 후측방 접근위험 입력을 반환한다.
 
     @param snap 검증된 스냅샷
@@ -155,7 +155,7 @@ def rule_approach_risk(
     @param now_ms 현재 시각(밀리초)
     @return 측 결정 또는 None(접근위험 없음)
     """
-    if not _approach_risk(snap, side):
+    if not approach_risk(snap, side):
         return None
     if mem.override_active:
         return _approach_while_override(cmd, side, mem)

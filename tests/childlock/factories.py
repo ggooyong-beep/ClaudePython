@@ -21,6 +21,8 @@ def raw_snapshot(**overrides):
         "sensor_fault": False,
     }
     raw.update(overrides)
+    if "source_timestamp_s" not in overrides:
+        raw["source_timestamp_s"] = raw["timestamp_s"]  # 기본은 방금 갱신된 신선한 입력
     return raw
 
 
@@ -29,3 +31,8 @@ def snapshot(**overrides):
     result = parse_snapshot(raw_snapshot(**overrides))
     assert result.snapshot is not None, result.errors
     return result.snapshot
+
+
+def all_valid():
+    """검증 통과한 입력의 그룹별 유효성 표를 만든다."""
+    return parse_snapshot(raw_snapshot()).validity
