@@ -1,0 +1,3 @@
+Source: physical_button, avn, voice, mobile_app
+Side: left, right, all
+Action: lock, unlock
