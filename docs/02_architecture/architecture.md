@@ -6,7 +6,7 @@
 
 ## 1. 설계 원칙
 1. **판단 로직은 순수 함수로 둔다.** `decide()`는 입력과 이전 기억(`Memory`)만으로 결과와 새 기억을 만든다. 시계, 난수, 파일, 네트워크를 직접 쓰지 않는다. 이것이 결정론(SWR-016)의 근거다.
-2. **시간은 입력으로 받는다.** 평가 시각은 `VehicleSnapshot.timestamp_s`이고 시계 객체는 주입한다.
+2. **시간은 입력으로 받는다.** 평가 시각은 `VehicleSnapshot.timestamp_s`이다. 시계 객체는 Web 계층(`api`)에만 주입해 입력에 시각이 없을 때 채운다. 이벤트 ID 카운터는 `event_log`가 가진다.
 3. **안전 로직과 Web 계층을 분리한다.** 판단 코어(`childlock`)는 Web 계층(`childlock.web`)을 알지 못한다. 의존 방향은 Web → 컨트롤러 → 코어 한 방향뿐이다.
 4. **함수는 작게 둔다.** 규칙 하나가 함수 하나이며, 모든 함수는 문장 50개 이하, 순환 복잡도 10 이하다.
 
@@ -41,7 +41,7 @@ flowchart LR
 | rules | `src/childlock/rules.py` | 개별 규칙 함수. 각 규칙은 "이 조건이 출력을 정하는가"를 반환한다. | SWR-003~009, 017, 018, 020, 021 |
 | arbiter | `src/childlock/arbiter.py` | 우선순위표 순서로 규칙을 평가해 `Decision`을 만든다(`decide`). | SWR-022 |
 | event_log | `src/childlock/event_log.py` | 이벤트 ID 부여, 허용 필드만 저장, 최근 100건 링 버퍼 | SWR-010~012 |
-| controller | `src/childlock/controller.py` | 50 ms 평가주기 오케스트레이션, 시계 주입, 기억 보관 | SWR-016, 023 |
+| controller | `src/childlock/controller.py` | 평가주기 오케스트레이션, 기억 보관, 입력 없는 주기(`tick`)의 stale 판정 | SWR-016, 023 |
 | api | `src/childlock/web/api.py` | 상태조회, 시험 입력, 이력 조회, 직렬화(HTTP 500 처리) | SWR-014 |
 | UI | `src/childlock/web/static/` | 입력 전송과 상태·이유코드 표시 | SWR-015 |
 
@@ -51,7 +51,7 @@ flowchart LR
 |---|---|
 | `VehicleSnapshot` | `timestamp_s`, `source_timestamp_s`, `vehicle_speed_kph`, `gear`, `crash_status`, `rear_left_approach_risk`, `rear_right_approach_risk`, `fire_detected`, `overtemperature_detected`, `adult_present`, `isofix_left`, `isofix_right`, `ignition_on`, `sensor_fault` |
 | `DriverCommand` | `side`(`left`/`right`/`all`), `action`(`lock`/`unlock`), `source`(`physical_button`/`avn`/`voice`/`mobile_app`) |
-| `Memory` | `last_left`, `last_right`, `suppressed_since_ms_left`, `suppressed_since_ms_right`, `event_counter` |
+| `Memory` | `last_left`, `last_right`, `suppressed_since_ms_left`, `suppressed_since_ms_right`, `override_active_left`, `override_active_right` |
 | `Decision` | `lock_left`, `lock_right`, `state`, `reason_code`, `priority_reason`, `input_validity`, `override` |
 
 설계 결정:
@@ -105,6 +105,7 @@ sequenceDiagram
 | `RELEASE_DENIED_MOVING` | 이동 중 해제 거절 | SWR-004 |
 | `DRIVER_COMMAND` | 운전자 명령 적용 | SWR-001, 002 |
 | `INPUT_STALE` | 입력 갱신 지연 | SWR-013 |
+| `INPUT_INVALID` | 형식·범위 오류로 입력 거절 | SWR-013 |
 | `NO_CHANGE` | 변경 없음 | - |
 
 ## 8. Web 인터페이스 (SWR-014, 015)
