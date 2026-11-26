@@ -3,7 +3,7 @@
 @file models.py
 @brief 판단 코어가 공유하는 데이터 정의 (상세 설계 1~2절).
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 
 CYCLE_MS = 50  # 평가주기 (SWR-023)
@@ -122,3 +122,66 @@ class DriverCommand:
     side: Side
     action: Action
     source: Source
+
+
+@dataclass(frozen=True, slots=True)
+class SideMemory:
+    """한 측이 다음 평가주기로 넘기는 기억."""
+
+    last: LockOutput = LockOutput.RELEASE
+    suppressed_since_ms: int | None = None
+    override_active: bool = False
+
+
+@dataclass(frozen=True, slots=True)
+class Memory:
+    """판단 함수가 주기 사이에 보관하는 기억. 초기값은 좌·우 RELEASE이다."""
+
+    left: SideMemory = field(default_factory=SideMemory)
+    right: SideMemory = field(default_factory=SideMemory)
+
+    def side(self, side: Side) -> SideMemory:
+        """측에 해당하는 기억을 반환한다.
+
+        @param side Side.LEFT 또는 Side.RIGHT
+        @return 해당 측의 SideMemory
+        """
+        return self.left if side is Side.LEFT else self.right
+
+
+@dataclass(frozen=True, slots=True)
+class Verdict:
+    """전역 규칙의 결과. 좌·우 출력을 함께 정한다. state가 None이면 기본 규칙으로 정한다."""
+
+    left: LockOutput
+    right: LockOutput
+    reason: ReasonCode
+    state: State | None
+
+
+@dataclass(frozen=True, slots=True)
+class SideVerdict:
+    """측별 규칙의 결과와 그 측이 갱신할 기억."""
+
+    output: LockOutput
+    reason: ReasonCode
+    override: bool = False
+    suppressed_since_ms: int | None = None
+    override_active: bool = False
+
+
+@dataclass(frozen=True, slots=True)
+class Decision:
+    """한 평가주기의 결정 (OEM-IF-005, 006)."""
+
+    lock_left: LockOutput
+    lock_right: LockOutput
+    state: State
+    priority_reason: ReasonCode
+    input_validity: dict[str, str]
+    override: bool = False
+
+    @property
+    def reason_code(self) -> ReasonCode:
+        """priority_reason를 reason_code로도 매핑한다 (OEM-IF-006)."""
+        return self.priority_reason
