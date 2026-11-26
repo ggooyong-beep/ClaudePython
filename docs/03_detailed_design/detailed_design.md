@@ -194,7 +194,7 @@ stateDiagram-v2
 | 항목 | 설계 |
 |---|---|
 | 의존성 | `fastapi`, `uvicorn`, 시험용 `httpx` |
-| `POST /evaluate` | 본문 `{snapshot, command?}`. 입력에 시각이 없으면 주입된 시계(`now_s`)로 채운다. 거절이면 422와 오류 목록, 성공이면 200과 `Decision` |
+| `POST /evaluate` | 본문 `{snapshot, command?}`. 평가 시각 `timestamp_s`가 없으면 주입된 시계(`now_s`)로 채운다. `source_timestamp_s`는 채우지 않으며 누락은 거절한다. 거절이면 422와 오류 목록, 성공이면 200과 `Decision` |
 | `GET /status` | `Controller.status()` 직렬화. 직렬화 중 예외는 예외 처리기로 HTTP 500 |
 | `GET /events` | `EventLog.events()` 직렬화 |
 | `GET /` | `static/index.html` |
@@ -233,3 +233,5 @@ stateDiagram-v2
 | 거절 입력 | 형식·범위 오류는 거절 | 운전자 명령 오류도 같은 방식으로 주기 전체를 거절한다(`INPUT_INVALID`, 출력·기억 유지). 유효성 그룹에 `command`와 `time`이 추가되었다. |
 | 상태 유지 | - | 거절 주기의 `state`는 직전 결정의 상태를 유지한다. |
 | 시험 파일 | 11절의 계획 이름 | `tests/childlock/`의 `test_validator`, `test_rules_global`, `test_rules_side`, `test_arbiter`, `test_event_log`, `test_controller`, `test_determinism`, `test_api`, `test_models`로 정리했다. |
+| 이유코드 순위 | 접근위험 잠금이 override보다 앞 | 시스템 테스트(TC-F-051) 결함 수정으로 `APPROACH_OVERRIDE`를 `APPROACH_RISK_*`보다 앞에 둔다. 한쪽이 override이고 반대쪽이 접근위험 잠금이어도 응답에 override 이유코드가 드러난다. |
+| `source_timestamp_s` 보정 | 시계로 보정 | 시스템 테스트(TC-F-010) 결함 수정으로 보정하지 않는다. 누락은 OEM-IF-001대로 `INVALID`이다. |

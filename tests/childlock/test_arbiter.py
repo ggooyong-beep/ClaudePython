@@ -241,3 +241,13 @@ def test_crash_confirmed_reason_wins_over_simultaneous_emergency():
     snap = snapshot(crash_status="CONFIRMED", fire_detected=True)
     decision, _ = _decide(snap, mem=_mem(LOCK, LOCK))
     assert decision.priority_reason is ReasonCode.CRASH_CONFIRMED
+
+
+def test_override_reason_is_reported_even_when_other_side_is_risk_locked():
+    risky = {"rear_left_approach_risk": True, "rear_right_approach_risk": True}
+    unlock_left = _cmd(side=Side.LEFT)
+    _, mem = _decide(snapshot(timestamp_s=1.0, **risky), unlock_left)
+    decision, _ = _decide(snapshot(timestamp_s=5.0, **risky), unlock_left, mem)
+    assert (decision.lock_left, decision.lock_right) == (RELEASE, LOCK)
+    assert decision.override is True
+    assert decision.priority_reason is ReasonCode.APPROACH_OVERRIDE

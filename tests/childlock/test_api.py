@@ -36,13 +36,21 @@ def test_evaluate_returns_decision_with_outputs_and_reason(client):
     assert body["reason_code"] == "DRIVER_COMMAND"
 
 
-def test_evaluate_fills_missing_timestamps_from_injected_clock(client):
-    snapshot = raw_snapshot()
+def test_evaluate_fills_missing_evaluation_time_from_injected_clock(client):
+    snapshot = raw_snapshot(source_timestamp_s=49.9)
     del snapshot["timestamp_s"]
-    del snapshot["source_timestamp_s"]
     response = client.post("/evaluate", json={"snapshot": snapshot})
     assert response.status_code == 200
     assert client.get("/events").json()[0]["timestamp_s"] == 50.0
+
+
+def test_missing_source_timestamp_is_rejected_not_filled_in(client):
+    snapshot = raw_snapshot()
+    del snapshot["source_timestamp_s"]
+    response = client.post("/evaluate", json={"snapshot": snapshot})
+    assert response.status_code == 422
+    assert "source_timestamp_s" in response.json()["errors"][0]
+    assert client.get("/status").json()["reason_code"] == "INPUT_INVALID"
 
 
 def test_invalid_input_returns_422_with_errors_and_no_decision_change(client):

@@ -39,7 +39,7 @@ pipeline {
                 script {
                     def py = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run('cloc --json --by-file --out=cloc.json src tools')
-                    run("${py} tools/quality_gate.py cloc.json --min 20 --prefix src/ --prefix tools/")
+                    run("${py} -m tools.quality_gate cloc.json --min 20 --prefix src/ --prefix tools/")
                 }
             }
         }
@@ -47,8 +47,8 @@ pipeline {
             steps {
                 script {
                     def py = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
-                    run("${py} tools/trace_check.py docs/01_requirements/01_swr.md docs/01_requirements/oem_requirements.txt")
-                    run("${py} tools/unit_trace.py docs/01_requirements/01_swr.md tests/childlock")
+                    run("${py} -m tools.trace_check docs/01_requirements/01_swr.md docs/01_requirements/oem_requirements.txt")
+                    run("${py} -m tools.unit_trace docs/01_requirements/01_swr.md tests/childlock")
                 }
             }
         }
