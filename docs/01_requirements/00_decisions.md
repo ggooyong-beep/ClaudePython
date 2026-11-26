@@ -25,11 +25,15 @@
 | 1 | `crash_status = CONFIRMED` | 좌·우 `RELEASE` | `SR-001` |
 | 2 | 화재, 과온, 성인 존재 중 하나가 TRUE | 좌·우 `RELEASE` | `FR-005` |
 | 3 | `sensor_fault = TRUE` | 직전 확정 출력 유지, `FAULT` | `SR-004` |
+| 3.5 | `crash_status = PENDING` | 직전 출력 유지, 이벤트만 기록 (DEC-003) | `SR-001` |
 | 4 | 측별 후측방 접근위험 TRUE | 해당 측 `LOCK`, 해제 요청 억제 | `SR-002` |
 | 5 | 측별 ISOFIX TRUE | 해당 측 `LOCK` | `FR-006` |
 | 6 | `ignition_on = FALSE` | 좌·우 `RELEASE`, `OFF` 상태 | `FR-007` |
 | 7 | 유효 차속 ≥ 3 km/h | 좌·우 `LOCK` | `FR-002` |
 | 8 | 운전자 명령 | 선택 측에 적용(DEC-005 조건 포함) | `FR-001` |
+
+## 상세 설계 중 추가된 해석 (DD-004)
+- **DD-004** 접근위험으로 해제가 억제된 측에서 10초 이하 재입력으로 override가 성립하면, 그 측의 접근위험이 FALSE가 될 때까지 `RELEASE`를 유지한다. 같은 측에 `lock` 명령이 오면 override를 해제하고 `LOCK`한다. override를 유지하지 않으면 다음 평가주기에 접근위험 규칙(`SWR-005`)이 다시 `LOCK`을 걸어 override가 한 주기만 지속된다. 사양서는 override 이후 동작을 정의하지 않았다. 상태: 확인 필요.
 
 ## 사용자 확정 사항
 - 성인 존재(순위 2)와 접근위험(순위 4)이 동시에 TRUE이면 성인 존재가 우선하여 `RELEASE`한다. (확정)
