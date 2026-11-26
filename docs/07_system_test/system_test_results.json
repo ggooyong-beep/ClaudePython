@@ -1,0 +1,974 @@
+[
+ {
+  "id": "TC-F-001",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-002",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-003",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-004",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-005",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-006",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-007",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-008",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-009",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-010",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-011",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-012",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-013",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-014",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-015",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-016",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-017",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-018",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-019",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-020",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-021",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-022",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-023",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-024",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-025",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-026",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-027",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-028",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-029",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-030",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-031",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-032",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-033",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-034",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-035",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-036",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-037",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-038",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-039",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-040",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-041",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-042",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-043",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-044",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-045",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-046",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-047",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-048",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-049",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-050",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-051",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-052",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-053",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-054",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-055",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-056",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-057",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-058-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-059-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-060-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-061",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-062",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-063",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-064-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-065-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-066-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-067",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-068",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-069-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-070-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-071-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-072-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-073",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-074",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-075",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-076-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-077-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-078",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-079",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-080",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-081",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-082-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-083",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-084",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-085-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-086-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-087",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-088",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-089",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-090",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-091",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-092",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-093",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-094",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-F-095-S",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-096-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-097-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-098-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-099-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-100-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-101-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-102-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-103-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-104-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-105-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-106-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-107-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-108-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-109-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-110-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-111-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-112-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-113-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-114-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-115-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-116-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-117-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-118-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-119-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-120-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-121-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-122-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-123-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-124-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-125-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-126-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-127-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-128-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-129-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-130-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-131-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-132-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-133-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-134-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-135-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-136-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-137-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-138-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-139-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-140-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-141-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-142-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-143-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-144-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-145-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-146-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-147-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-148-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-149-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-150-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-151-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-F-152-S",
+  "status": "PASS",
+  "detail": "",
+  "suggested": true
+ },
+ {
+  "id": "TC-N-001",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-002",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-003",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-004",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-005",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-006",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-007",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-008-S",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": true
+ },
+ {
+  "id": "TC-N-009",
+  "status": "PASS",
+  "detail": "",
+  "suggested": false
+ },
+ {
+  "id": "TC-N-010-S",
+  "status": "SKIP",
+  "detail": "자동 실행 불가 절차",
+  "suggested": true
+ }
+]

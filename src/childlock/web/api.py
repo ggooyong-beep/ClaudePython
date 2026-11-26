@@ -60,15 +60,17 @@ def serialize(item: Decision | Any) -> dict[str, Any]:
 
 
 def _with_clock(snapshot: dict[str, Any], now_s: Callable[[], float]) -> dict[str, Any]:
-    """누락된 시각 필드를 주입된 시계로 채운다.
+    """누락된 평가 시각(timestamp_s)만 주입된 시계로 채운다.
+
+    source_timestamp_s는 입력이 생성된 시각이므로 채우지 않는다. 누락을 채우면
+    낡은 입력 판정(SWR-013)과 OEM-IF-001의 '누락은 INVALID' 규칙이 무력화된다.
 
     @param snapshot 원시 스냅샷
     @param now_s 현재 시각(초)을 돌려주는 함수
-    @return 시각이 채워진 새 딕셔너리
+    @return 평가 시각이 채워진 새 딕셔너리
     """
     merged = dict(snapshot)
-    timestamp = merged.setdefault("timestamp_s", now_s())
-    merged.setdefault("source_timestamp_s", timestamp)
+    merged.setdefault("timestamp_s", now_s())
     return merged
 
 
