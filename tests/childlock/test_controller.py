@@ -1,7 +1,15 @@
 """컨트롤러 시험: 평가주기 오케스트레이션 (SWR-013, 016, 023)."""
+import pytest
+
 from childlock.controller import Controller
 from childlock.models import LockOutput, ReasonCode, State
 from tests.childlock.factories import raw_snapshot
+
+pytestmark = [
+    pytest.mark.swr("SWR-007"),
+    pytest.mark.swr("SWR-013"),
+    pytest.mark.swr("SWR-023"),
+]
 
 LOCK, RELEASE = LockOutput.LOCK, LockOutput.RELEASE
 LOCK_ALL = {"side": "all", "action": "lock", "source": "avn"}

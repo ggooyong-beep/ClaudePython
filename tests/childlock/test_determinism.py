@@ -1,8 +1,14 @@
 """결정론 시험: 같은 입력 순서와 초기 상태는 같은 결과를 낸다 (SWR-016)."""
 import hashlib
 
+import pytest
+
 from childlock.controller import Controller
 from tests.childlock.factories import raw_snapshot
+
+pytestmark = [
+    pytest.mark.swr("SWR-016"),
+]
 
 UNLOCK_LEFT = {"side": "left", "action": "unlock", "source": "voice"}
 LOCK_ALL = {"side": "all", "action": "lock", "source": "avn"}

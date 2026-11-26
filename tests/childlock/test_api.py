@@ -5,6 +5,10 @@ from fastapi.testclient import TestClient
 from childlock.web.api import create_app
 from tests.childlock.factories import raw_snapshot
 
+pytestmark = [
+    pytest.mark.swr("SWR-014"),
+]
+
 LOCK_ALL = {"side": "all", "action": "lock", "source": "mobile_app"}
 EVENT_FIELDS = {
     "event_id",

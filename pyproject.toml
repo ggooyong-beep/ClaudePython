@@ -20,6 +20,7 @@ childlock = ["web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["swr(*ids): 시험이 검증하는 SW 요구사항 ID (단위 시험 추적성)"]
 pythonpath = ["src", "."]
 addopts = "--cov --cov-branch --cov-report=term-missing --cov-fail-under=100"
 

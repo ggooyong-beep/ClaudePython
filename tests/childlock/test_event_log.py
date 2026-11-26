@@ -1,8 +1,16 @@
 """이벤트 로그 시험 (SWR-010, 011, 012)."""
 import dataclasses
 
+import pytest
+
 from childlock.event_log import Event, EventLog
 from childlock.models import Decision, LockOutput, ReasonCode, State
+
+pytestmark = [
+    pytest.mark.swr("SWR-010"),
+    pytest.mark.swr("SWR-011"),
+    pytest.mark.swr("SWR-012"),
+]
 
 
 def _decision(reason=ReasonCode.NO_CHANGE, validity=None):

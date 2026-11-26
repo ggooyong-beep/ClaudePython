@@ -13,7 +13,7 @@ def parse_swr(text: str) -> list[dict]:
     """markdown 표에서 SWR 행을 읽는다.
 
     @param text SWR 명세 markdown 전문
-    @return 각 행의 id, parents, kind 를 담은 딕셔너리 목록
+    @return 각 행의 id, parents, kind, verification 을 담은 딕셔너리 목록
     """
     rows = []
     for line in text.splitlines():
@@ -21,7 +21,10 @@ def parse_swr(text: str) -> list[dict]:
         if not cells[0].startswith("SWR-") or len(cells) < 4:
             continue
         parents = [p.strip() for p in cells[1].split(",") if p.strip() not in ("", "-")]
-        rows.append({"id": cells[0], "parents": parents, "kind": cells[3]})
+        verification = cells[6] if len(cells) > 6 else ""
+        rows.append(
+            {"id": cells[0], "parents": parents, "kind": cells[3], "verification": verification}
+        )
     return rows
 
 
