@@ -14,6 +14,7 @@ pipeline {
                 script {
                     def pip = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run("${pip} -m pip install -e .[dev]")
+                    run("${pip} -m playwright install chromium")
                 }
             }
         }
