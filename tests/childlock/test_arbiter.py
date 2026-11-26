@@ -227,3 +227,9 @@ def test_priority_reason_is_the_higher_priority_of_the_two_sides():
 def test_priority_reason_tie_prefers_left_side():
     decision, _ = _decide(snapshot(isofix_left=True, isofix_right=True))
     assert decision.priority_reason is ReasonCode.ISOFIX_LEFT
+
+
+def test_crash_confirmed_reason_wins_over_simultaneous_emergency():
+    snap = snapshot(crash_status="CONFIRMED", fire_detected=True)
+    decision, _ = _decide(snap, mem=_mem(LOCK, LOCK))
+    assert decision.priority_reason is ReasonCode.CRASH_CONFIRMED
