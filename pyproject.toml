@@ -3,10 +3,10 @@ name = "childlock"
 version = "0.1.0"
 description = "전자식 차일드락 제어 SW (OEM-SWR-001)"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = ["fastapi", "uvicorn"]
 
 [project.optional-dependencies]
-dev = ["ruff", "pytest", "pytest-cov"]
+dev = ["ruff", "pytest", "pytest-cov", "httpx2"]
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -14,6 +14,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+childlock = ["web/static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -219,3 +219,17 @@ stateDiagram-v2
 | 022 | `arbiter.decide` | `test_arbiter.py` |
 
 테스트 파일은 `tests/childlock/` 아래에 두며, 파일 이름은 설계 단계의 계획이고 4단계에서 확정한다.
+
+## 12. 구현 반영 사항 (4단계에서 확정)
+
+구현 중 단순화를 위해 설계를 다음과 같이 조정했다. 동작은 바뀌지 않는다.
+
+| 항목 | 설계 | 구현 |
+|---|---|---|
+| 기억 구조 | `Memory`에 좌·우 필드를 나열 | `SideMemory(last, suppressed_since_ms, override_active)`를 만들고 `Memory(left, right)`가 이를 가진다. |
+| 접근위험 기억 지우기 | `rule_approach_risk` 1단계 | 접근위험이 없는 측은 `arbiter._decide_side`가 평가 전에 억제 시각과 override를 지운다. 규칙은 접근위험이 없으면 `None`만 반환한다. |
+| `approach_risk` | 규칙 내부 보조 함수 | 아비터도 쓰므로 `rules.approach_risk`로 공개했다. |
+| `rule_auto_lock` | `(snap, cmd)` | 측별 해제 거절을 위해 `(side, snap, cmd)` |
+| 거절 입력 | 형식·범위 오류는 거절 | 운전자 명령 오류도 같은 방식으로 주기 전체를 거절한다(`INPUT_INVALID`, 출력·기억 유지). 유효성 그룹에 `command`와 `time`이 추가되었다. |
+| 상태 유지 | - | 거절 주기의 `state`는 직전 결정의 상태를 유지한다. |
+| 시험 파일 | 11절의 계획 이름 | `tests/childlock/`의 `test_validator`, `test_rules_global`, `test_rules_side`, `test_arbiter`, `test_event_log`, `test_controller`, `test_determinism`, `test_api`, `test_models`로 정리했다. |
