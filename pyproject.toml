@@ -1,0 +1,43 @@
+[project]
+name = "childlock"
+version = "0.1.0"
+description = "전자식 차일드락 제어 SW (OEM-SWR-001)"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest", "pytest-cov"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "--cov --cov-branch --cov-report=term-missing --cov-fail-under=100"
+
+[tool.coverage.run]
+branch = true
+source = ["src", "tools"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tools", "tests"]
+# 에이전트 스킬 도구(.claude)와 가상환경은 제품 소스가 아니므로 정적분석에서 제외한다.
+extend-exclude = [".claude", ".venv"]
+
+[tool.ruff.lint]
+# E/W: pycodestyle, F: pyflakes, I: import 정렬, N: 명명 규칙(Google Style),
+# C901: 순환 복잡도, PLR0915: 함수 문장 수
+select = ["E", "W", "F", "I", "N", "C901", "PLR0915"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-statements = 50
