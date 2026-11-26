@@ -5,6 +5,12 @@ from childlock.models import CrashStatus, Gear
 from childlock.validator import age_ms, is_stale, parse_command, parse_snapshot
 from tests.childlock.factories import raw_snapshot, snapshot
 
+pytestmark = [
+    pytest.mark.swr("SWR-001"),
+    pytest.mark.swr("SWR-002"),
+    pytest.mark.swr("SWR-013"),
+]
+
 
 def test_valid_input_is_parsed_with_all_groups_valid():
     result = parse_snapshot(raw_snapshot(vehicle_speed_kph=50, gear="D", crash_status="PENDING"))

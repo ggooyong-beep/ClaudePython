@@ -23,6 +23,18 @@ from childlock.rules import (
 )
 from tests.childlock.factories import snapshot
 
+pytestmark = [
+    pytest.mark.swr("SWR-001"),
+    pytest.mark.swr("SWR-002"),
+    pytest.mark.swr("SWR-003"),
+    pytest.mark.swr("SWR-004"),
+    pytest.mark.swr("SWR-005"),
+    pytest.mark.swr("SWR-006"),
+    pytest.mark.swr("SWR-009"),
+    pytest.mark.swr("SWR-018"),
+    pytest.mark.swr("SWR-020"),
+]
+
 LOCK, RELEASE = LockOutput.LOCK, LockOutput.RELEASE
 LEFT, RIGHT, ALL = Side.LEFT, Side.RIGHT, Side.ALL
 

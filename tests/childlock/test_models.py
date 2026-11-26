@@ -1,4 +1,6 @@
 """모델의 동작이 있는 부분 시험: 측별 기억 조회, reason_code 매핑 (OEM-IF-006)."""
+import pytest
+
 from childlock.models import (
     Decision,
     LockOutput,
@@ -8,6 +10,10 @@ from childlock.models import (
     SideMemory,
     State,
 )
+
+pytestmark = [
+    pytest.mark.swr("SWR-014"),
+]
 
 
 def test_memory_returns_the_remembered_side():

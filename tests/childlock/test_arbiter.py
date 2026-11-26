@@ -3,6 +3,8 @@
 우선순위표: 충돌 확정 > 비상 > 센서 고장 > 충돌 미확정 > 접근위험 > ISOFIX
 > 시동 OFF > 자동 잠금 > 운전자 명령
 """
+import pytest
+
 from childlock.arbiter import decide
 from childlock.models import (
     Action,
@@ -16,6 +18,12 @@ from childlock.models import (
     State,
 )
 from tests.childlock.factories import all_valid, snapshot
+
+pytestmark = [
+    pytest.mark.swr("SWR-006"),
+    pytest.mark.swr("SWR-013"),
+    pytest.mark.swr("SWR-022"),
+]
 
 LOCK, RELEASE = LockOutput.LOCK, LockOutput.RELEASE
 

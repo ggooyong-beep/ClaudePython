@@ -13,9 +13,9 @@ TABLE = """\
 def test_parse_reads_id_parents_and_kind():
     rows = parse_swr(TABLE)
     assert rows == [
-        {"id": "SWR-001", "parents": ["OEM-A", "OEM-B"], "kind": "도출"},
-        {"id": "SWR-002", "parents": ["OEM-B"], "kind": "제안"},
-        {"id": "SWR-003", "parents": [], "kind": "결번"},
+        {"id": "SWR-001", "parents": ["OEM-A", "OEM-B"], "kind": "도출", "verification": "단위"},
+        {"id": "SWR-002", "parents": ["OEM-B"], "kind": "제안", "verification": "단위"},
+        {"id": "SWR-003", "parents": [], "kind": "결번", "verification": "-"},
     ]
 
 
