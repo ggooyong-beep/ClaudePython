@@ -12,7 +12,7 @@ pipeline {
             steps {
                 run('python -m venv .venv')
                 script {
-                    def pip = isUnix() ? '.venv/bin/python' : '.venv\Scripts\python'
+                    def pip = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run("${pip} -m pip install -e .[dev]")
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
         stage('정적분석 (Ruff)') {
             steps {
                 script {
-                    def py = isUnix() ? '.venv/bin/python' : '.venv\Scripts\python'
+                    def py = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run("${py} -m ruff check .")
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
         stage('단위 테스트와 커버리지 (Pytest)') {
             steps {
                 script {
-                    def py = isUnix() ? '.venv/bin/python' : '.venv\Scripts\python'
+                    def py = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run("${py} -m pytest --cov-report=xml")
                 }
             }
@@ -36,7 +36,7 @@ pipeline {
         stage('주석률 게이트 (cloc)') {
             steps {
                 script {
-                    def py = isUnix() ? '.venv/bin/python' : '.venv\Scripts\python'
+                    def py = isUnix() ? '.venv/bin/python' : '.venv\\Scripts\\python'
                     run('cloc --json --by-file --out=cloc.json src tools')
                     run("${py} tools/quality_gate.py cloc.json --min 20 --prefix src/ --prefix tools/")
                 }
