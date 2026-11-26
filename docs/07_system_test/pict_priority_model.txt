@@ -1,0 +1,13 @@
+Prior: RELEASE, LOCK
+Crash: NONE, PENDING, CONFIRMED
+Emergency: NONE, FIRE, OVERTEMP, ADULT
+Fault: F, T
+RiskL: F, T
+RiskR: F, T
+IsofixL: F, T
+IsofixR: F, T
+Ignition: ON, OFF
+Speed: STOP, MOVE
+Command: NONE, L_UNLOCK, R_LOCK, ALL_UNLOCK, ALL_LOCK
+
+IF [Ignition] = "OFF" THEN [Speed] = "STOP";

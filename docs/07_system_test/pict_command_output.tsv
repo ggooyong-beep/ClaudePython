@@ -1,0 +1,13 @@
+Source	Side	Action
+voice	left	lock
+avn	all	lock
+voice	right	unlock
+voice	all	unlock
+mobile_app	right	lock
+mobile_app	all	unlock
+physical_button	right	unlock
+mobile_app	left	unlock
+avn	left	unlock
+physical_button	all	lock
+avn	right	unlock
+physical_button	left	lock
